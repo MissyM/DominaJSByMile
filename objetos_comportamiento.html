@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	
+	
+		var emp = {		
+			nombre : 'Alice',
+            sueldoBase : 32000,
+            //Cuando se crea el objeto function, realmente se guarda en 
+            //saludar una referencia de memoria a él
+			saludar : function() {		
+				console.log('hola, soy ' + this.nombre);
+			}, 
+			calcularSueldo : function() {
+				var resultado = this.sueldoBase * 1.5;
+				return resultado;
+			},
+		};
+		
+		console.log(emp.saludar.length);
+		emp.saludar();//Aqui el contexto al que apunta this es el objeto emp
+		var sueldoTotal = emp.calcularSueldo(); 
+		console.log('El sueldo es: ' + sueldoTotal);
+        //Cuando se ejecute la siguiente linea el objeto al que apunta this.nombre es window
+		window.xxx = emp.saludar;
+        nombre = 'amigo'; 
+        //A continuación de ejecuta function() {		
+			// 	console.log('hola, soy ' + this.nombre);
+			// }, 
+		window.xxx();
+	
+	
+	
+	
+	
+	
+	</script>
+	
+	
+</body>
+</html>
